@@ -1,0 +1,59 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "4DRayMarchingWinforms/1.0.0": {
+        "dependencies": {
+          "ComputeSharp": "3.0.0-preview2"
+        },
+        "runtime": {
+          "4DRayMarchingWinforms.dll": {}
+        }
+      },
+      "ComputeSharp/3.0.0-preview2": {
+        "dependencies": {
+          "ComputeSharp.Core": "3.0.0-preview2"
+        },
+        "runtime": {
+          "lib/net8.0/ComputeSharp.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.0.0.0"
+          }
+        }
+      },
+      "ComputeSharp.Core/3.0.0-preview2": {
+        "runtime": {
+          "lib/net8.0/ComputeSharp.Core.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "4DRayMarchingWinforms/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ComputeSharp/3.0.0-preview2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-H7txgnVG5n0mJ4rq+RK+NhNLnEfXUrOezd+ANJ5rkctmGhxzrDtM856EpXc6hgKlVXX++6QvpsQUYNZc0btMqA==",
+      "path": "computesharp/3.0.0-preview2",
+      "hashPath": "computesharp.3.0.0-preview2.nupkg.sha512"
+    },
+    "ComputeSharp.Core/3.0.0-preview2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ZZL4hSUVoFh78of3IIy0QO+EQeRdzIYICswHDyugxY55zfNAVTs5p3lwb90PbgMuADQE0FqlRfdJYW7l3rFeTA==",
+      "path": "computesharp.core/3.0.0-preview2",
+      "hashPath": "computesharp.core.3.0.0-preview2.nupkg.sha512"
+    }
+  }
+}

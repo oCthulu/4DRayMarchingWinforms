@@ -1,0 +1,156 @@
+{
+  "version": 3,
+  "targets": {
+    "net8.0-windows7.0": {
+      "ComputeSharp/3.0.0-preview2": {
+        "type": "package",
+        "dependencies": {
+          "ComputeSharp.Core": "3.0.0-preview2"
+        },
+        "compile": {
+          "lib/net8.0/ComputeSharp.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/ComputeSharp.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/ComputeSharp.targets": {}
+        }
+      },
+      "ComputeSharp.Core/3.0.0-preview2": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/ComputeSharp.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/ComputeSharp.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/ComputeSharp.Core.targets": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ComputeSharp/3.0.0-preview2": {
+      "sha512": "H7txgnVG5n0mJ4rq+RK+NhNLnEfXUrOezd+ANJ5rkctmGhxzrDtM856EpXc6hgKlVXX++6QvpsQUYNZc0btMqA==",
+      "type": "package",
+      "path": "computesharp/3.0.0-preview2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "analyzers/dotnet/cs/ComputeSharp.CodeFixers.dll",
+        "analyzers/dotnet/cs/ComputeSharp.SourceGenerators.dll",
+        "build/ComputeSharp.targets",
+        "buildTransitive/ComputeSharp.targets",
+        "computesharp.3.0.0-preview2.nupkg.sha512",
+        "computesharp.nuspec",
+        "icon.png",
+        "lib/net8.0/ComputeSharp.dll",
+        "lib/net8.0/ComputeSharp.xml"
+      ]
+    },
+    "ComputeSharp.Core/3.0.0-preview2": {
+      "sha512": "ZZL4hSUVoFh78of3IIy0QO+EQeRdzIYICswHDyugxY55zfNAVTs5p3lwb90PbgMuADQE0FqlRfdJYW7l3rFeTA==",
+      "type": "package",
+      "path": "computesharp.core/3.0.0-preview2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "analyzers/dotnet/cs/ComputeSharp.Core.SourceGenerators.dll",
+        "build/ComputeSharp.Core.targets",
+        "buildTransitive/ComputeSharp.Core.targets",
+        "computesharp.core.3.0.0-preview2.nupkg.sha512",
+        "computesharp.core.nuspec",
+        "icon.png",
+        "lib/net8.0/ComputeSharp.Core.dll",
+        "lib/net8.0/ComputeSharp.Core.xml"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net8.0-windows7.0": [
+      "ComputeSharp >= 3.0.0-preview2"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\andre\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\andre\\Documents\\CSharpProjects\\4DRayMarchingWinforms\\4DRayMarchingWinforms.csproj",
+      "projectName": "4DRayMarchingWinforms",
+      "projectPath": "C:\\Users\\andre\\Documents\\CSharpProjects\\4DRayMarchingWinforms\\4DRayMarchingWinforms.csproj",
+      "packagesPath": "C:\\Users\\andre\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\andre\\Documents\\CSharpProjects\\4DRayMarchingWinforms\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\andre\\AppData\\Roaming\\NuGet\\NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "net8.0-windows"
+      ],
+      "sources": {
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net8.0-windows7.0": {
+          "targetAlias": "net8.0-windows",
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
+      }
+    },
+    "frameworks": {
+      "net8.0-windows7.0": {
+        "targetAlias": "net8.0-windows",
+        "dependencies": {
+          "ComputeSharp": {
+            "target": "Package",
+            "version": "[3.0.0-preview2, )"
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          },
+          "Microsoft.WindowsDesktop.App.WindowsForms": {
+            "privateAssets": "none"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}
