@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using System.Drawing.Imaging;
 using System.Numerics;
 using ComputeSharp;
@@ -9,12 +10,23 @@ namespace _4DRayMarchingWinforms;
 public partial class Form1 : Form
 {
     public float AspectRatio => (float)ClientSize.Width / ClientSize.Height;
+
     public float fieldOfView = 90;
+
+    private Vector3 cameraOffset = new Vector3(0, 0, -2);
+    private Vector3 cameraRotation = new Vector3(45, -45, 0);
+
+    private Vector3 planeRotation = new Vector3(0, 0, 0);
+
+    private Point mousePosPrev;
+
     ReadWriteBuffer<float4> posBuffer;
     ReadWriteBuffer<float4> normBuffer;
 
     ReadWriteTexture2D<Rgba32, float4> finalTextureBuffer;
     Bitmap finalTexture;
+
+    Stopwatch stopwatch = new Stopwatch();
 
     public Form1()
     {
@@ -30,11 +42,43 @@ public partial class Form1 : Form
 
     protected override void OnPaint(PaintEventArgs e)
     {
+        Console.WriteLine($"Other: {stopwatch.ElapsedMilliseconds}ms");
+        stopwatch.Restart();
+
+        base.OnPaint(e);
+        Console.WriteLine($"base.OnPaint(): {stopwatch.ElapsedMilliseconds}ms");
+        stopwatch.Restart();
+
+        //update camera rotation
+        if (MouseButtons.HasFlag(MouseButtons.Left))
+        {
+            cameraRotation.X += (MousePosition.Y - mousePosPrev.Y) * 0.5f;
+            cameraRotation.Y += (MousePosition.X - mousePosPrev.X) * 0.5f;
+        }
+
+        if (MouseButtons.HasFlag(MouseButtons.Right))
+        {
+            planeRotation.X += (MousePosition.Y - mousePosPrev.Y) * 0.25f;
+            planeRotation.Y += (MousePosition.X - mousePosPrev.X) * 0.25f;
+        }
+
+        if (MouseButtons.HasFlag(MouseButtons.Middle))
+        {
+            planeRotation.Z += (MousePosition.Y - mousePosPrev.Y) * 0.25f;
+        }
+
+        mousePosPrev = MousePosition;
+
+        Console.WriteLine($"Updating: {stopwatch.ElapsedMilliseconds}ms");
+        stopwatch.Restart();
+
         Graphics g = e.Graphics;
 
         RerenderImage();
 
         g.DrawImage(finalTexture, 0, 0);
+        Console.WriteLine($"Drawing image: {stopwatch.ElapsedMilliseconds}ms");
+        stopwatch.Restart();
 
         Invalidate();
     }
@@ -53,7 +97,12 @@ public partial class Form1 : Form
     }
 
     private void RerenderImage(){
-        Matrix4x4 camTransform = Matrix4x4.CreateTranslation(0, 0, -2) * Matrix4x4.CreateFromYawPitchRoll(DegToRad(-45), DegToRad(45), 0);
+        Matrix4x4 camTransform = Matrix4x4.CreateTranslation(cameraOffset) * Matrix4x4.CreateFromYawPitchRoll(DegToRad(cameraRotation.Y), DegToRad(cameraRotation.X), 0);
+
+        CpuCrossSectionPlane plane = CpuCrossSectionPlane.identity;
+        plane *= CreateRotationMatrix(Axis.Z, Axis.W, DegToRad(planeRotation.Z));
+        plane *= CreateRotationMatrix(Axis.X, Axis.W, DegToRad(planeRotation.X));
+        plane *= CreateRotationMatrix(Axis.Y, Axis.W, DegToRad(planeRotation.Y));
         
         //calculate camera slope
         float vertSlope = MathF.Tan(fieldOfView/2);
@@ -64,7 +113,8 @@ public partial class Form1 : Form
             posBuffer,
             normBuffer,
             new float2(horzSlope, vertSlope),
-            Matrix4x4.Transpose(camTransform)
+            Matrix4x4.Transpose(camTransform),
+            plane
         ));
 
         //render the final image
@@ -74,7 +124,12 @@ public partial class Form1 : Form
             finalTextureBuffer
         ));
 
+        Console.WriteLine($"Rendering: {stopwatch.ElapsedMilliseconds}ms");
+        stopwatch.Restart();
+
         CopyToImage();
+        Console.WriteLine($"Copying: {stopwatch.ElapsedMilliseconds}ms");
+        stopwatch.Restart();
     }
 
     private unsafe void CopyToImage(){

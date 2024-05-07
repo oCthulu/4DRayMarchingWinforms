@@ -7,17 +7,16 @@ public readonly partial struct RenderBase(
     ReadWriteBuffer<float4> posBuffer,
     ReadWriteBuffer<float4> normBuffer,
     float2 camSlope,
-    float4x4 camTransform
+    float4x4 camTransform,
+    GpuCrossSectionPlane plane
 ) : IComputeShader
 {
     public const float DISTANCE_THRESHOLD = 0.001f;
 
     public float DistanceEstimator(float3 pos)
     {
-        return Hlsl.Max(
-            Cube(pos, new float3(0, 0, 0), new float3(0.5f, 0.5f, 0.5f)),
-            -Cube(pos, new float3(0.5f, 0.5f, 0.5f), new float3(0.5f, 0.5f, 0.5f))
-        );
+        //return HyperCube(plane, pos, new float4(0, 0, 0, 0), new float4(0.5f, 0.5f, 0.5f, 0.5f));
+        return HyperTorus(plane, pos, new float4(0, 0, 0, 0), 0.5f, 0.25f, 0.1f);
     }
     
     public void Execute()
@@ -67,6 +66,9 @@ public readonly partial struct RenderFinal(
     public void Execute()
     {
         int index = ThreadIds.Y * DispatchSize.X + ThreadIds.X;
+
+        finalTexture[ThreadIds.XY] = new float4(0, 0, 0, 1);
+        if(posBuffer[index].W == 0) return;
 
         finalTexture[ThreadIds.XY].RGB = Hlsl.Dot(normBuffer[index].XYZ, lightDir);
         finalTexture[ThreadIds.XY].A = 1;
