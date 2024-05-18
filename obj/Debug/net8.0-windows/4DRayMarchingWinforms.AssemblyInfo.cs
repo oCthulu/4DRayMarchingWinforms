@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("4DRayMarchingWinforms")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+69e5c2f3816ac16659f537873a13554a2a641b42")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+74d419a0e41d2c6e79f42973ac256b94fb7a694d")]
 [assembly: System.Reflection.AssemblyProductAttribute("4DRayMarchingWinforms")]
 [assembly: System.Reflection.AssemblyTitleAttribute("4DRayMarchingWinforms")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -14,6 +14,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = _4DRayMarchingWinforms
-build_property.ProjectDir = C:\Users\andre\OneDrive\Music\Documents\CSharpProjects\2DBlockGame\4DRayMarchingWinforms\
+build_property.ProjectDir = C:\Users\andre\Documents\CSharpProjects\4DRayMarchingWinforms\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

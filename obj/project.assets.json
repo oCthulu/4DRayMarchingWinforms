@@ -84,32 +84,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\andre\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\andre\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\andre\\OneDrive\\Music\\Documents\\CSharpProjects\\2DBlockGame\\4DRayMarchingWinforms\\4DRayMarchingWinforms.csproj",
+      "projectUniqueName": "C:\\Users\\andre\\Documents\\CSharpProjects\\4DRayMarchingWinforms\\4DRayMarchingWinforms.csproj",
       "projectName": "4DRayMarchingWinforms",
-      "projectPath": "C:\\Users\\andre\\OneDrive\\Music\\Documents\\CSharpProjects\\2DBlockGame\\4DRayMarchingWinforms\\4DRayMarchingWinforms.csproj",
+      "projectPath": "C:\\Users\\andre\\Documents\\CSharpProjects\\4DRayMarchingWinforms\\4DRayMarchingWinforms.csproj",
       "packagesPath": "C:\\Users\\andre\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\andre\\OneDrive\\Music\\Documents\\CSharpProjects\\2DBlockGame\\4DRayMarchingWinforms\\obj\\",
+      "outputPath": "C:\\Users\\andre\\Documents\\CSharpProjects\\4DRayMarchingWinforms\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\andre\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\andre\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0-windows"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

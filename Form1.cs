@@ -50,19 +50,19 @@ public partial class Form1 : Form
         stopwatch.Restart();
 
         //update camera rotation
-        if (MouseButtons.HasFlag(MouseButtons.Left))
+        if (MouseButtons.HasFlag(MouseButtons.Left) && !ModifierKeys.HasFlag(Keys.Control) && !ModifierKeys.HasFlag(Keys.Shift))
         {
             cameraRotation.X += (MousePosition.Y - mousePosPrev.Y) * 0.5f;
             cameraRotation.Y += (MousePosition.X - mousePosPrev.X) * 0.5f;
         }
 
-        if (MouseButtons.HasFlag(MouseButtons.Right))
+        if (MouseButtons.HasFlag(MouseButtons.Right) || (MouseButtons.HasFlag(MouseButtons.Left) && ModifierKeys.HasFlag(Keys.Control)))
         {
             planeRotation.X += (MousePosition.Y - mousePosPrev.Y) * 0.25f;
             planeRotation.Y += (MousePosition.X - mousePosPrev.X) * 0.25f;
         }
 
-        if (MouseButtons.HasFlag(MouseButtons.Middle))
+        if (MouseButtons.HasFlag(MouseButtons.Middle) || (MouseButtons.HasFlag(MouseButtons.Left) && ModifierKeys.HasFlag(Keys.Shift)))
         {
             planeRotation.Z += (MousePosition.Y - mousePosPrev.Y) * 0.25f;
         }
