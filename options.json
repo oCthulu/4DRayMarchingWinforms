@@ -1,0 +1,9 @@
+{
+    "skyboxType":"gradient",
+    "screenshotSkyboxType":"gradient",
+    "screenshotResolution":{"x":2048, "y":2048},
+
+    "mainLightWeight":1.0,
+    "skyLightWeight":0.5,
+    "ambientLightWeight":0.25
+}

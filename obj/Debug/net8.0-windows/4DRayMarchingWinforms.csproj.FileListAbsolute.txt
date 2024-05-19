@@ -36,3 +36,4 @@ C:\Users\andre\OneDrive\Music\Documents\CSharpProjects\2DBlockGame\4DRayMarching
 C:\Users\andre\OneDrive\Music\Documents\CSharpProjects\2DBlockGame\4DRayMarchingWinforms\obj\Debug\net8.0-windows\4DRayMarchingWinforms.genruntimeconfig.cache
 C:\Users\andre\OneDrive\Music\Documents\CSharpProjects\2DBlockGame\4DRayMarchingWinforms\obj\Debug\net8.0-windows\ref\4DRayMarchingWinforms.dll
 C:\Users\andre\Documents\CSharpProjects\4DRayMarchingWinforms\obj\Debug\net8.0-windows\4DRayMarchingWinforms.sourcelink.json
+C:\Users\andre\OneDrive\Music\Documents\CSharpProjects\2DBlockGame\4DRayMarchingWinforms\bin\Debug\net8.0-windows\options.json

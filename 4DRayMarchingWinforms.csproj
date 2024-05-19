@@ -12,6 +12,9 @@
 
   <ItemGroup>
     <PackageReference Include="ComputeSharp" Version="3.0.0-preview2" />
+    <Content Include="options.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
 </Project>
